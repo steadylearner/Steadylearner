@@ -1,0 +1,5 @@
+# Not to include it for JavaScript
+node_modules/
+
+# For Rust
+target
