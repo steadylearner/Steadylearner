@@ -5,7 +5,7 @@
    title: "How to setup Jest to test JavaScript Code",
    subtitle:  "Learn how to write tests for JavaScript codes with Jest.",
    image:  "/code/Jest.png",
-   image_decription: "Jest Official Image",
+   image_decripton: "Jest Official Image",
    tags: "test JavaScript Jest Steadylearner",
  }
 -->
@@ -130,6 +130,7 @@ module.exports = {
 };
 ```
 
+package.json
 ```json
 {
   "devDependencies": {
@@ -233,6 +234,7 @@ The main difference is that the former used to define **multiple prefixes and re
 
 (I thought that it would be better for you to have multiple shortcuts than to a shortcut to save our time.)
 
+<br />
 
 ## 3. How to write Jest code to test it
 For we built **the development environment to use jest** and prepared **JavaScript code** to test before, we will begin to write real **Jest code** in this part. It will not so difficult if you already knew **how to code** and **JavaScript**. For the codes **we will write will be JavaScript after all**.
@@ -365,9 +367,9 @@ describe('Test when prefixesWithReplacements should return the replaced href', (
 5. For we could pass the test from the `4.`, what we should **test for this part is to verify that the function works for multiple prefixes**. We write some tests for the function when it should return the original href.
 6. We finally get to test the code that we want to use for our project.  It won't be difficult to understand what the test does if you followed the post well to this point. The purpose of **this test is to verify the cases when the function should return replaced href** instead.
 
-<br />
-
 and that is all we should know to test those two functions that does the same role after all with **Jest Test Fraemwork** and to have working test code snippet for it.
+
+<br />
 
 ## 4. Conclusion
 

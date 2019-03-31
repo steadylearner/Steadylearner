@@ -17,5 +17,5 @@ it('CheckboxWithLabel changes the text after click', () => {
 });
 
 // How to enable DOM features such as doucments and window? use jsdom?
-// Mock functions with jest.fn(() => { //function here });
+// Mock functions with jest.fn(() => { // function here });
 // Search it when you need it
