@@ -1,38 +1,3 @@
-<!-- 
- Post{ 
-   title: "React Easy Markdown",
-   subtitle:  "Learn how to use modules from react-easy-md to write markdown.",
-   image:  "/code/React.png",
-   image_decription: "NPM image from the webiste",
-   tags: "react-easy-md markdown NPM React",
-   theme: "npm",
- }
--->
-
-<!-- Use yours instead later
-[![Travis branch](https://img.shields.io/travis/Vincent-P/react-marked-markdown/master.svg?maxAge=2592000)]()
-[![npm version](https://badge.fury.io/js/react-marked-markdown.svg)](https://badge.fury.io/js/react-marked-markdown)
-[![npm](https://img.shields.io/npm/dt/react-marked-markdown.svg?maxAge=2592000)]()
--->
-
-<!-- Shortcut -->
-
-[react-marked-markdown]: https://github.com/Vincent-P/react-marked-markdown
-[React Easy Markdown Github Repository]: https://github.com/steadylearner/react-easy-md
-[Codesandbox for react-easy-md]: https://codesandbox.io/s/wz9pp1xpn8
-[How to enable code syntax highlight in React App]: https://medium.com/@steadylearner/how-to-enable-code-syntax-highlight-in-react-app-38463498fa6e
-
-<!-- \Shortcut -->
-
-<!-- Steadylearner -->
-
-[Steadylearner]: https://www.steadylearner.com/
-[Blog]: https://www.steadylearner.com/blog
-[Markdown]: https://www.steadylearner.com/markdown
-[prop-passer]: https://www.npmjs.com/package/prop-passer
-[How to write less code for links in markdown with React]: https://www.steadylearner.com/blog/read/How-to-write-less-code-for-links-in-markdown-with-React
-<!-- \Steadylearner -->
-
 <!-- What I have to do later -->
 <!--
   1. Update outdated packages and write your own package.json
@@ -236,6 +201,8 @@ With ReactMarkdown from react-easy-md, **you don't have to type the entire paths
 3. Update the package to use latest dependencies and test it with **Jest**
 4. **Tests and examples**
 
+<br />
+
 ## Where to learn and use markdown?
 
  [Markdown-Tutorial]: https://www.markdowntutorial.com/
@@ -248,8 +215,3 @@ With ReactMarkdown from react-easy-md, **you don't have to type the entire paths
  6. [Steadylearner Markdown Live Editor][markdown]
  7. [Markdown to html](https://markdowntohtml.com/)
  8. [Markdown Interpreter](https://dillinger.io/)
-
-
-
-
-
