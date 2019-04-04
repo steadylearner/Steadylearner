@@ -1,6 +1,6 @@
 <!-- 
  Post{ 
-   title: "React Easy Markdown Github Page",
+   title: "React Easy Markdown",
    subtitle:  "Some React components to help you write markdown with ease.",
    image:  "/code/React.png",
    image_decription: "React Image from the website",
