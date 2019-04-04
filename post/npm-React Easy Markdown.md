@@ -62,6 +62,8 @@
 
 <!-- \Steadylearner -->
 
+[![Travis branch](https://img.shields.io/travis/Steadylearner/react-easy-md/master.svg?maxAge=2592000)]() [![npm version](https://badge.fury.io/js/react-easy-md.svg)](https://badge.fury.io/js/react-easy-md) [![npm](https://img.shields.io/npm/dt/react-easy-md.svg?maxAge=2592000)]()
+
 The code used here is mainly from [react-marked-markdown][react-marked-markdown].
 
 But the differences are 
@@ -191,7 +193,7 @@ prefixWithReplacement={[
 
 We pass various **prefixes** with **its replacements** with data type **array of arrays**.
 
-Then, Inside `ReactMarkdown` module it will convert 
+Then, Inside `MarkdownPreview` module it will convert 
 ```md
 [Blog](s-/blog)
 [LinkedIn](l-/steady-learner-3151b7164)
@@ -210,7 +212,7 @@ equal to
 [Github](https://github.com/steadylearner)
 ```
 
-With ReactMarkdown from react-easy-md, **you don't have to type the entire paths anymore**. It helps you **not to repeat what you know they will do**.
+With `prefixWithReplacement` from react-easy-md, **you don't have to type the entire paths anymore**. It helps you **not to repeat what you know they will do**.
 
 <br />
 
