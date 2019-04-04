@@ -1,5 +1,8 @@
 # Not to include it for JavaScript
 node_modules/
 
+# NPM folder is inside it for convenience but the NPM packages should have their own .git files
+NPM/ 
+
 # For Rust
 target
