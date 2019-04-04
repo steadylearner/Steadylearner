@@ -109,31 +109,26 @@ moudle.exports = () => {
     module: {
       
       node: {
-	fs: "empty",
-	tls: "empty",
-	net: "empty",
-	child_process: "empty",
+	    fs: "empty",
+	    tls: "empty",
+	    net: "empty",
+	    child_process: "empty",
       },
  
       optimization: {
-        minimizer: [
-          new TerserPlugin({
-
-	  }),
-	],
+        minimizer: [new TerserPlugin()],
       },
 
       // To remove warning from 'jsdom' used inside react-easy-md 
       plugins: [
         new FilterWarningsPlugin({
-	  exclude: /Critical dependency: the request of a dependency is an expression/,
-	})
+	      exclude: /Critical dependency: the request of a dependency is an expression/,
+	    })
       ],
 
     }
   })
 }
-
 ```
 
 <br />
@@ -252,3 +247,4 @@ With ReactMarkdown from react-easy-md, **you don't have to type the entire paths
  6. [Steadylearner Markdown Live Editor][markdown]
  7. [Markdown to html](https://markdowntohtml.com/)
  8. [Markdown Interpreter](https://dillinger.io/)
+
