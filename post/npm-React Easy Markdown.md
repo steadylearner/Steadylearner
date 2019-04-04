@@ -62,12 +62,6 @@
 
 <!-- \Steadylearner -->
 
-# React Easy Markdown
-
-Some React components to help you write markdown with ease.
-
----
-
 The code used here is mainly from [react-marked-markdown][react-marked-markdown].
 
 But the differences are 
@@ -81,7 +75,8 @@ But the differences are
 The original Github repository is archived so I made this package to share the code from the former repository with some improvments. 
 
 The name of package became "react-easy-md" for the NPM Package didn't allow "React Easy Markdown" for similarity.
-You may think that React Easy Mardkdown refer to `react-easy-md` in this documentation.
+
+(You may think that React Easy Mardkdown refer to `react-easy-md` in this documentation.)
 
 For [Steadylearner][Steadylearner] uses markdown intensively, it may include more features later with examples and tests.
 
@@ -247,4 +242,5 @@ With ReactMarkdown from react-easy-md, **you don't have to type the entire paths
  6. [Steadylearner Markdown Live Editor][markdown]
  7. [Markdown to html](https://markdowntohtml.com/)
  8. [Markdown Interpreter](https://dillinger.io/)
+
 
