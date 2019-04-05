@@ -74,6 +74,13 @@ But the differences are
 (I modified them to be functional components to be more compatible with current **React** development trend but it didn't work well. Only to learn that ref can't be used with functional components and it is not easy to make functional components when class components have it.)
 4. LiveMarkdownEditor is removed from the package to reduce package size and example codes from [Markdown Editor Page][Markdown] from [Steadylearner][Steadylearner] will replace its role later. 
 
+To explain more about `1.`,You can define title in Markdown with  syntax such as
+`[Website](https://www.steadylearner.com/ "Website")`.
+
+But having default value solves  the problem of showing **null**  title when users forget to define it or when you get data from the other websites that doesn't have title value with `<a>` tag.
+
+It will also be convenient to have default values for it to save your time when you write markdown many times.
+
 The original Github repository is archived so I made this package to share the code from the former repository with some improvments. 
 
 The name of package became "react-easy-md" for the NPM Package didn't allow "React Easy Markdown" for similarity.
