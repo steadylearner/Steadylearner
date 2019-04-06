@@ -1,10 +1,10 @@
 <!-- 
  Post{ 
-   title: "How to turn chars into binary and vice versa with Rust",
-   subtitle:  "Learn how to use Rust to decode and encode binary data.",
-   image:  "/code/Rust.svg",
+   title: "How to use Rust to copy files at Github",
+   subtitle: "Learn how to use Reqwest to save request.body in your machine.",
+   image: "/code/Rust.svg",
    image_decription: "Rust Image from the website",
-   tags: "Rust binary chars stream",
+   tags: "Rust reqwest Github request",
    theme: "rust",
  }
 -->
@@ -17,7 +17,7 @@
 [Blog]: s-/blog
 [Markdown]: https://www.steadylearner.com/markdown
 [prop-passer]: https://www.npmjs.com/package/prop-passer
-[How to write less code for links in markdown with React]: https://www.steadylearner.com/blog/read/How-to-write-less-code-for-links-in-markdown-with-React
+[How to write less code for links in markdown with React]:  s-/blog/read/How-to-write-less-code-for-links-in-markdown-with-React
 
 <!-- \Steadylearner -->
 
@@ -26,40 +26,53 @@
 [Rust]: https://www.rust-lang.org/
 [JSON]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON
 [What is Binary Data]: https://www.techopedia.com/definition/17929/binary-data
+[Reqwest]: https://github.com/seanmonstar/reqwest
+[CURL]: https://curl.haxx.se/
+[git]: https://git-scm.com/
 
 <!-- \Shortcut -->
 
-When programming in [Rust][Rust] and others, I found that it is important to know how to **decode** and **encode** binary datas. 
+If you have used [CURL][CURL] before, you should know that you can print the page with
+```curl
+$curl https://www.rust-lang.org
+```
+and save it in your machine with a little POSIX knowledge. 
+```
+$curl https://www.rust-lang.org > rust-org.html
+``` 
+What we are going to learn in this post is to find how to use [Rust][Rust] to replace those comamnds. It won't be difficult for we already have [reqwest][reqwest] crate that can be used nstead of **CURL**.
 
-You can help the machine to understand the data you pass in the **binary** format and you can also read them by converting them into **chars**(characters) and make it work for the important processes such as writing files, receivng data from the web etc.
+The final goal of this post is to use it to download blog posts saved at [Github][posts]. You may wonder why you should use it instead of [git][git] commands. But, There are some benefits of using programming languages such as Rust and Python for this purpose instead of **git** and **CURL** etc.
 
-If you are a beginner in **Rust**, it may not be easy to find how to do them in the first place. So I wanted to share the code to help you. You will find that is is easy  with the working examples.
+1. You can make some predefined **variables** and functions to save you from typing same things repeatedly.  
+2.  You can print some helper messages and you don't have to remember all requirements.
+3. In case of **git**, you donwload .git files at the same time and its size grows over time and you shouldn't need it just to download a single file to your machine.
 
 <br />
 
 <h2 class="red-white">[Prerequisite]</h2>
 
 1. [How to use Rust][Rust]
-2. [What is Binary Data][What is Binary Data]
+2. [Rust Reqwest Crate][Reqwest]
 ---
 
-You should already know how to write [Rust][Rust] code before you read on. I also want you to understand what is [binary data][What is Binary Data] before. It will help you to understand the importance of knowing how to deal with it.
+You should already know how to write [Rust][Rust] code before you read on. I also want you to to visit the [reqwest][reqwest] Github repository to briefly understand how to use it.
 
-If you already have experience in [JSON][JSON] but not familiar with this topic, you may compare what you will learn here with `JSON.parse` and `JSON.stringfiy` to decode and encode **JSON** type data.
+We will start from the [simple.rs](https://github.com/seanmonstar/reqwest/blob/master/examples/simple.rs) file  at the repository. I hope you read the other example files also before read on.
  
 <br />
 
 <h2 class="blue">Table of Contents</h2>
 
-1. How to turn **chars** into **binary data** with Rust 
-2. **Vice Versa**
+1. **How to print response.body** on your console with **Reqwest**
+2. **How to save it** in your machine with **Rust**
 3. **Conclusion**
 
 ---
 
 <br />
 
-## 1. How to turn chars into binary data with Rust 
+## 1. How to print response.body on your console with Reqwest
 
 It was not so difficult to find how to do it with **Rust**. For it has very simple way to do that already.
 
