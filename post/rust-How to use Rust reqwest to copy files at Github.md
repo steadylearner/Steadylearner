@@ -67,7 +67,7 @@ We will start from the [simple.rs](https://github.com/seanmonstar/reqwest/blob/m
 
 1. **How to print response.body** on your console with **Reqwest**
 2. **How to save it** in your machine with **Rust**
-3. How to use in your **CLI**
+3. How to use it in your **CLI**
 4. **Conclusion**
 
 ---
