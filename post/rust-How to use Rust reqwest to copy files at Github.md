@@ -1,6 +1,6 @@
 <!-- 
  Post{ 
-   title: "How to use Rust to copy files at Github",
+   title: "How to use Rust reqwest to copy files at Github",
    subtitle: "Learn how to use Reqwest to save request.body in your machine.",
    image: "/code/Rust.svg",
    image_decription: "Rust Image from the website",
