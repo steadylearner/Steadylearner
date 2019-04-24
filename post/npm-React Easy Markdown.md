@@ -169,10 +169,9 @@ function App() {
   return (
     <section className="App">
       <MarkdownPreview
-        // For we eallow sanitize false and allow html, it should show the same result
-        // You can test it with value={markdown(html(example))}
-        // It doesn't reserve html props so use it with caution.
-        value={html(example)}
+        // For we allow html with santize false, it should show the same result
+        // html and markdown API don't reserve html props well so use it with caution.
+        value={markdown(html(example))}
         //
         markedOptions={{
           langPrefix: "hljs ", // hljs prefix to style code blocks.
