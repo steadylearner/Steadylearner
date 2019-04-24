@@ -114,7 +114,6 @@ moudle.exports = () => {
         },
       ],
 
-
       node: {
         fs: "empty",
         tls: "empty",
@@ -268,6 +267,7 @@ const react-easy-md = markdown(HTML) // "# react easy md"
 ```js
 import React, { Component } from "react";
 import { readLocalFileWithHow, saveTextFromWeb } from "react-easy-md";
+
 class ReactEasyMarkdown extends Component {
 
   constructor(props) {
@@ -284,6 +284,7 @@ class ReactEasyMarkdown extends Component {
   }
 
   render() {
+    const { value } = this.state;
     return <span onClick={() => saveTextFromWeb(value)} >
   }
 }
@@ -299,7 +300,7 @@ class ReactEasyMarkdown extends Component {
 
 ## What is Next?
 
-1. **Tests**, **examples** and the webpage.
+1. **Tests**, **examples** and the webpage
 2. [Posts][Blog] to explain it at [Steadylearner][Steadylearner]
 
 ## Read More
@@ -318,3 +319,4 @@ class ReactEasyMarkdown extends Component {
  5. [Steadylearner Markdown Live Editor][markdown]
  6. [Markdown to html](https://markdowntohtml.com/)
  7. [Markdown Interpreter](https://dillinger.io/)
+
