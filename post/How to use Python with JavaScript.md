@@ -42,7 +42,7 @@
  
 <!-- Shortcut -->
 
- Having experience in JavaScript and Python, I wanted to find how to use them together. So I searched how to do that in **Python** and **JavaScript** development environment. 
+Having experience in JavaScript and Python, I wanted to find how to use them together. So I searched how to do that in **Python** and **JavaScript** development environment. 
 
 In this post, we will specifically learn how to use [python-bridge] and JavaScript [async await][JavaScirpt async programming] syntax for the puirpose. You will find that it is not so difficult if you already have experience in both languages. 
 
@@ -55,7 +55,9 @@ In this post, we will specifically learn how to use [python-bridge] and JavaScri
  3. [How to use pip]
  4. [How to use NPM]
 
-I will suppose that you already know how to handle packages in **Python** and **JavaScript** You should read [python-bridge] repository and follow the examples before you read on this post. The post about [JavaScirpt async programming] will help you understand how to use it greatly and want you to read other relevant posts also. If you just want to see the code, you can find the end result of this post at [pyscript] Repository. 
+I will suppose that you already know how to handle packages in **Python** and **JavaScript**. You should read [python-bridge] repository and follow the examples before you read on this post. 
+
+The post about [JavaScirpt async programming] will help you understand how to use it greatly and want you to read other relevant posts also. If you just want to see the code, you can find the end result of this post at [pyscript] Repository. 
 
 <br>
 
