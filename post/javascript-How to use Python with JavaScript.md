@@ -1,7 +1,7 @@
 <!--
   Post{
-    title: "How to use Python with JavaScript with python-bridge",
-    subtitle: "Include Numpy, pandas, pyautogui etc in JavaScript",
+    title: "How to use Python in JavaScript",
+    subtitle: "Numpy, pandas, pyautogui etc in JavaScript",
     image: "/code/prop-passer.image_watermark.text_watermark.png",
     image_decription: "Image made with HTML and CSS by www.steadylearner.com",
     tags: "python-bridge, FFI, Python, JavaScript, ",
@@ -46,6 +46,7 @@ Having experience in **JavaScript** and **Python**, I wanted to find how to use 
 
 In this post, we will  learn how to use it with JavaScript [async await][JavaScirpt async programming] syntax for the purpose. You will find that it is not so difficult if you already have experience in both languages.
 
+
 <br />
 
 <h2 class="red-white"> [Prerequisite] </h2>
@@ -55,7 +56,7 @@ In this post, we will  learn how to use it with JavaScript [async await][JavaSci
  3. [How to use pip]
  4. [How to use NPM
 
-<br / >
+<br />
 
 I will suppose that you already know how to handle packages in **Python** and **JavaScript**. You should read [python-bridge] repository and follow the examples before you read on this post.
 
@@ -245,7 +246,7 @@ pyscript();
 
 While playing with this package, I found that everything wouldn't work well magically with the help from the package author and should invest our time to find how to use them for our own project.
 
-1. We define some functions to wrap return value from **Python** inside "" with JSON API or convert it to **string type** value before they enter JavaScript development environment. What you mainly need to is just to use **fromPy**.(You can either use **toString()** in JavaScript or **str()** or other type conversion methods given by **Python** whenever you meet the type relevant problem.)
+1. We define some functions to wrap return value from **Python** inside "" with JSON API or convert it to **string type** value before they enter JavaScript development environment. What you mainly need will be just `fromPy`.(You can either use **toString()** in JavaScript or **str()** or other type conversion methods given by **Python** whenever you meet the type relevant problem.)
 
 2. We test [Numpy] and [Pandas] would really work or not. You can see that they work and find that you need to use `py` only when you need to return value from Python to JavaScript. Otherwise, you will use `ex` mainly.
 
@@ -268,7 +269,7 @@ So we will briefly compare [Numpy] and [Numjs] for they serve for the same purpo
 You can save the code snippet below and test it.
 
 ```js
-'use strict'; // numpy_and_numjs compare.js
+'use strict'; // numpy_and_numjs_compare.js
 
 const python = require('python-bridge'); // https://www.npmjs.com/package/python-bridge
 const nj = require('numjs'); // www.npmjs.com/package/numjs
@@ -324,7 +325,9 @@ For the main purpose of the post is not test, I won't find test examples that wo
 
 I hope the difference between them is smaller in your machine.(The machine used here is half ten year, battery-dead laptop)
 
-<br /> <!-- © www.steadylearner.com -->
+<br /> 
+
+<!-- © www.steadylearner.com -->
 
 ## 5. Conclusion
 
