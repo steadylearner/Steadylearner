@@ -5,7 +5,7 @@
     image: "/code/prop-passer.image_watermark.text_watermark.png",
     image_decription: "Image made with HTML and CSS by www.steadylearner.com",
     tags: "python-bridge, FFI, Python, JavaScript, ",
-    theme: "python",
+    theme: "javascript",
   }
 -->
 
