@@ -1,8 +1,8 @@
 <!-- 
  Post{ 
    title: "How to use Rust reqwest",
-   subtitle: "Learn how to use it to substitute CURL.",
-   image: "/code/Rust_b.svg",
+   subtitle: "Learn how to use it to substitute CURL",
+   image: "code/Rust_r.png",
    image_decription: "Rust Image from the website",
    tags: "Rust reqwest GitHub CURL",
    theme: "rust",
@@ -47,7 +47,7 @@ The final goal of this post is to use it to download blog posts saved at [Github
 
 1. You can make some predefined **variables** and functions to save you from typing same things repeatedly. 
 2.  You can print some helper messages and you don't have to remember all requirements.
-3. In case of **git**, you donwload .git files alsoe and its size grows over time and you shouldn't need it just to download a single file to your machine.(You don't have to type your id and password also.)
+3. In case of **git**, you donwload .git files also and its size grows over time and you shouldn't need it just to download a single file to your machine.(You don't have to type your id and password also.)
 
 <br />
 
@@ -117,12 +117,12 @@ fn main() -> Result<(), Box<std::error::Error>> {
     Ok(())
 }
 ```
-It is not so different from the example at [reqwest]. 
+What it intend to do are similar to the example at [reqwest]. 
 
-The differences are
+But the differences are
 
 1. We extract common parts from the location of each files to **variable** and we don't have to type it everytime with help from **Rust**. It can differ from user to user. 
-2. Each file used here as example has its type of language to differenciate themeselves from others. You can skip this part if you want.
+2. Each file used here as example has its type of language to differenciate themeselves from others(You can skip this part if you want.)
 3. The process is similar to `1.` and it is our **payload**(It will be used with CLI later.)
 
 If you execute this file you will see message that starts with 
@@ -137,7 +137,7 @@ Post {
    theme: "rust",
 }
 ```
-From now on, You can use **Rust** instead of **CURL** to show **response.body** on your console whenever you want with a little modification for your project.  
+From now on, You can use **Rust** instead of **CURL** to show **response.body** on your console whenever you want with a little modification for your project.
 
 <br />
 
