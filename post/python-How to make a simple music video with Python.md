@@ -1,3 +1,14 @@
+<!--
+  Post{
+    title: "How to make a simpĺe music video with Python for YouTube",
+    subtitle: "Upload your video made with Python at YouTube",
+    image: "/brand/Moviepy.png",
+    image_decription: "Moviepy offical image",
+    tags: "Moviepy, Python, Video, YouTube",
+    theme: "python",
+  }
+-->
+
 [YouTube]: https://www.youtube.com/channel/UCt_jsJOe91EVjd58kHpgTfw
 [ImageMagik]: https://www.steadylearner.com/static/images/brand/ImageMagik.gif
 
@@ -90,7 +101,7 @@ and that is all. Your image is ready to be used for your music video with a sing
 
 At this moment, You already have audio file and image file to use. What we need to do from now on is just to instruct your machine to make a video instead of you. We will use Python and Moviepy for that. 
 
-**I hope you already visited its official website and read the documenation. **
+**I hope you already visited its official website and read the documenation.**
 
 The code snippet we need to write will be just a few lines of code below after all. After that you just need to execute it at command line.  Let me show you the code first.
 
@@ -130,7 +141,7 @@ You wouldn't need to tweak the example above if you want and use it directly. Be
 
 <br />
 
-**[Command Line] **
+**[Command Line]**
 
 ```
 $python music_video_with_single_image.py <video_for_audio> <image>
@@ -139,7 +150,7 @@ ex) python music_video_with_image.py audio_from_video.mp4 your_image.jpg
 ```
 
 
-You almost made it. What you need to do is just type the command above in your Command Line. After that, You will see the process similar to snippet below and your video file will be ready to use.
+You almost made it. What you need to do is just type the command above in your Command Line. After that, You will see the process similar to snippet below and your video file will be ready to use.(You can see the video complete at [here](https://www.steadylearner.com/video/watch/s7TVVyTyReU))
 
 <br />
 
@@ -165,8 +176,8 @@ pygame 1.9.4
 
 <br />
 
-I hope you made it. From now on, What you need to do will be just to modify some words in examples for your own project. You may upload the file for YouTube or use it to test Moviepy API. 
+I hope you made it. From now on, What you need to do will be just to modify some words in examples for your own project. You may upload the file at YouTube or use it to test Moviepy API. 
 
 You can also find some of the example videos at [Steadylearner YouTube][YouTube]. They are made with almost the same process explained in this site.
 
-Thanks and please share this post with others.
+**Thanks and please share this post with others.**

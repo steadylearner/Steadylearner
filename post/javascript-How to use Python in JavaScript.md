@@ -1,10 +1,10 @@
 <!--
   Post{
     title: "How to use Python in JavaScript",
-    subtitle: "Numpy, pandas, pyautogui etc in JavaScript",
-    image: "/code/prop-passer.image_watermark.text_watermark.png",
+    subtitle: "Numpy, Pandas, Pyautogui etc in JavaScript",
+    image: "/code/python_in_javascript.text_watermark.png",
     image_decription: "Image made with HTML and CSS by www.steadylearner.com",
-    tags: "python-bridge, FFI, Python, JavaScript, ",
+    tags: "FFI, Python, JavaScript, Code",
     theme: "javascript",
   }
 -->
@@ -54,7 +54,7 @@ In this post, we will  learn how to use it with JavaScript [async await][JavaSci
  1. [python-bridge]
  2. [JavaScirpt async programming]
  3. [How to use pip]
- 4. [How to use NPM
+ 4. [How to use NPM]
 
 <br />
 
