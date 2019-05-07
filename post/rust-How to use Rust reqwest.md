@@ -2,7 +2,7 @@
  Post{ 
    title: "How to use Rust reqwest",
    subtitle: "Learn how to use it to substitute CURL.",
-   image: "/code/Rust_b.png",
+   image: "/code/Rust.svg",
    image_decription: "Rust Image from the website",
    tags: "Rust reqwest GitHub CURL",
    theme: "rust",

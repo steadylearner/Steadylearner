@@ -1,8 +1,8 @@
 <!--
   Post{
-    title: "How to make a simpĺe music video with Python for YouTube",
+    title: "How to make a simple music video with Python for YouTube",
     subtitle: "Upload your video made with Python at YouTube",
-    image: "/brand/Moviepy.png",
+    image: "/brand/youtube-brand-image.jpg",
     image_decription: "Moviepy offical image",
     tags: "Moviepy, Python, Video, YouTube",
     theme: "python",
