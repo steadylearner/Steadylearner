@@ -2,7 +2,7 @@
  Post{ 
    title: "How to use Rust reqwest",
    subtitle: "Learn how to use it to substitute CURL.",
-   image: "/code/Rust.svg",
+   image: "/code/Rust_b.svg",
    image_decription: "Rust Image from the website",
    tags: "Rust reqwest GitHub CURL",
    theme: "rust",
@@ -33,7 +33,7 @@
 
 <!-- \Shortcut -->
 
-If you have used [CURL][CURL] before, you should know that you can print the page with
+If you have used [CURL] before, you should know that you can print the page with
 ```curl
 $curl https://www.rust-lang.org
 ```
@@ -45,7 +45,7 @@ What we are going to learn in this post is to find how to use [Rust][Rust] to re
 
 The final goal of this post is to use it to download blog posts saved at [Github][posts]. You may wonder why you should use it instead of [git][git] commands. But, There are some benefits of using programming languages such as Rust and Python for this purpose instead of **git** and **CURL** etc.
 
-1. You can make some predefined **variables** and functions to save you from typing same things repeatedly.  
+1. You can make some predefined **variables** and functions to save you from typing same things repeatedly. 
 2.  You can print some helper messages and you don't have to remember all requirements.
 3. In case of **git**, you donwload .git files alsoe and its size grows over time and you shouldn't need it just to download a single file to your machine.(You don't have to type your id and password also.)
 
