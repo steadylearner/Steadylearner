@@ -1,9 +1,13 @@
-<!-- Type this first -->
-
-<!-- Title - How to build sitemap for images with Rust -->
-<!-- Subtitle - Learn how to build image sitemap.xml with Rust Sitemap Crate -->
-<!-- Image - https://www.steadylearner.com/static/images/code/image-sitemap.png-->
-<!-- Description - Rust image-sitemap.xml example from the Steadylearner-->
+<!--
+ Post{
+   title: "How to build sitemap for images with Rust",
+   subtitle: "Learn how to make image_sitemap.xml with it.",
+   image: "post/sitemap/sitemap_for_images_with_rust.png",
+   image_decription: "Made with CSS by Steadylearner",
+   tags: "Rust sitemap code image",
+   theme: "rust",
+ }
+-->
 
 <!-- Link here -->
 
@@ -12,41 +16,43 @@
 [Steadylearner Github Repository]: https://github.com/steadylearner/Steadylearner
 [How to deploy Rust Web App]: https://medium.com/@steadylearner/how-to-deploy-rust-web-application-8c0e81394bd5?source=---------9------------------
 [Rust Diesel]: http://diesel.rs/
+[Sitemap in React]: https://medium.com/@steadylearner/how-to-build-a-sitemap-for-react-app-7bbc3040dc1f
+[Sitemap GitHub]: https://github.com/steadylearner/Sitemap
 [What is image sitemap]: https://support.google.com/webmasters/answer/178636
 
 <!-- Post for this series -->
 
-[How to build a static sitemap with Rust]: https://www.steadylearner.com/blog/read/How-to-build-a-static-sitemap-with-Rust
-[How to build a dynamic sitemap with Rust Diesel]: https://www.steadylearner.com/blog/read/How-to-build-a-dynamic-sitemap-with-Rust-Diesel
+[Your first sitemap with Rust]: https://www.steadylearner.com/blog/read/Your-first-sitemap-with-Rust
+[How to use datas to build sitemap with Rust Diesel]: https://www.steadylearner.com/blog/read/How-to-use-datas-to-build-sitemap-with-Rust-Diesel
 [How to build a sitemap.txt from sitemap.xml with Rust]: https://www.steadylearner.com/blog/read/How-to-build-a-sitemap.txt-from-sitemap.xml-with-Rust
 [How to build a sitemap for React App]: https://medium.com/@steadylearner/how-to-build-a-sitemap-for-react-app-7bbc3040dc1f
 
+<!-- / -->
 
-<!-- -->
+If you read the previous post for sitemap with Rust, You could build sitemap.xml and sitemap.xml for routes in your website.
 
-This is the final post for the sitemaps. I hope you already read the previous posts [How to build a static sitemap with Rust][How to build a static sitemap with Rust], [How to build a dynamic sitemap with Rust Diesel][How to build a dynamic sitemap with Rust Diesel] and [How to build a sitemap.txt from sitemap.xml with Rust][How to build a sitemap.txt from sitemap.xml with Rust].
+This post is to help otherswho have to handle many images and build sitemap.
 
-The source code used for image sitemap.xml here should be separated from  the previous examples with the name like **image_sitemap.rs**.
+You will find that it is not so difficult with **Rust**.
 
 <br />
 
 <h2 class="red-white">[Prerequisite]</h2>
 
-1. [Rust Sitemap Crate][Rust Sitemap Crate]
-2. [What is image sitemap][What is image sitemap]
-3. [How to build a dynamic sitemap with Rust Diesel][How to build a dynamic sitemap with Rust Diesel] 
-4. [What is sitemap](https://support.google.com/webmasters/answer/156184?hl=en) 
-5. [How to build a sitemap](https://www.google.com/search?client=firefox-b-d&q=how+to+build+sitemap)
+1. [Rust Sitemap Crate]
+2. [What is image sitemap]
+3. [What is sitemap](https://support.google.com/webmasters/answer/156184?hl=en)
+4. [How to build a sitemap](https://www.google.com/search?client=firefox-b-d&q=how+to+build+sitemap)
 
 ---
 
-For this process is similar to [How to build a dynamic sitemap with Rust Diesel][How to build a dynamic sitemap with Rust Diesel] and major difference is the data used is images instead of blog posts, I hope you already followed the post.
+Code used here is similar to [How to use datas to build sitemap with Rust Diesel]. I hope you read it before move on.
 
-You should also read [What is image sitemap][What is image sitemap] because we will replicate the given example with Rust in this post.
+You should also read [What is image sitemap] because we will replicate the given example with Rust in this post.
 
-I also hope that you already have database setup inside your project for images such as [Rust Diesel][Rust Diesel]. I will give you an example and you will need to modify it for your project.
+I also hope that you already have database setup inside your project for images with [Rust Diesel] or your preference. I will give you an example and you will need to modify it for your project.
 
-If you prefer to see the final project first, you can refer to [Steadylearner Github Repository][Steadylearner Github Repository].
+If you want to see the final project first, you can refer to [Sitemap GitHub] Repository.
 
 <br />
 
@@ -62,12 +68,11 @@ If you prefer to see the final project first, you can refer to [Steadylearner Gi
 
 ## 1. Image_sitemap.rs to write sitemap for images
 
-For we will separate the process to write sitemap for images, we will write **image_sitemap.rs **first. You can refer to **models.rs** and **cargo.toml** below if you want. 
-
-(Your project will not be the xactly the same for these examples and you should find corresponding codes inside your project on your own)
+We will separate the code to write sitemap for images, we will write **image_sitemap.rs**.
+(You can refer to **models.rs** and **cargo.toml** given below if you want.)
 
 ```rust
-// models.rs to use Rust Diesel, it will difer from your project.
+// models.rs to use Rust Diesel, it is just an example
 #[derive(Debug, Queryable, Identifiable, Serialize, Deserialize)]
 pub struct Image {
     pub id: i32,
@@ -80,8 +85,7 @@ pub struct Image {
 <br />
 
 ```toml
-# Inside cargo.toml, write the code like below
-# You may modify it for your project
+# cargo.toml, write the code similar to this
 
 # $cargo run --bin <name> will point to the path we define here
 # (Replace <name> to image-sitemap for this post)
@@ -92,11 +96,11 @@ path = "src/bin/main.rs"
 name = "sitemap"
 path = "src/bin/sitemap.rs"
 [[bin]]
-name = "image-sitemap" 
+name = "image-sitemap"
 path = "src/bin/image_sitemap.rs"
 
-# lib is used like crate and can import and export publicly 
-# other files in the same directory level.
+# lib is used like crate and can import and export other files in the same directory level.
+
 [lib]
 name = "your_lib"
 path = "src/lib.rs"
@@ -106,27 +110,22 @@ path = "src/lib.rs"
 
 ```rust
 // image_sitemap.rs to write image_sitemap.xml
-extern crate your_lib;
+extern crate sl_lib;
 extern crate console;
 extern crate diesel;
 
 use std::fs;
-use std::fs::File;
 use std::fs::OpenOptions;
 use std::io::prelude::*;
-use std::str;
 
-use std::io::BufReader;
+use sl_lib::models::*;
+use sl_lib::*;
 
-use your_lib::models::*;
-use your_lib::*;
-
-use console::Style; // use just to decorate the output
+use console::Style;
 
 use diesel::prelude::*;
 
 fn main() -> std::io::Result<()> {
-    // 1. 
     use crate::schema::images::dsl::*;
     let connection = init_pool().get().unwrap();
 
@@ -136,17 +135,12 @@ fn main() -> std::io::Result<()> {
         .load::<Image>(&*connection)
         .expect("Error loading images");
 
-    //
-
     println!(
         "\nIt starts to write image_sitemap.xml for {} images",
         bold.apply_to(image_results.len())
     );
 
-    // Read https://support.google.com/webmasters/answer/178636?hl=en before
-    // to understand what is necessary parts for image_sitemap.xml
-
-    // 2.
+    // https://support.google.com/webmasters/answer/178636?hl=en
 
     let start_xml = r#"<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
@@ -158,7 +152,6 @@ fn main() -> std::io::Result<()> {
     let mut result = OpenOptions::new().append(true).open("image_sitemap.xml").unwrap();
 
     let mut image_xml = String::new();
-    // main part for the entire code to write image_sitemap.xml 
     for image in image_results {
         let image_url = format!(
             "    <image:image>
@@ -171,12 +164,10 @@ fn main() -> std::io::Result<()> {
             image.title,
             image.content,
             image.media_url,
-            // image.title.replace(" ", "-")
         );
         image_xml.push_str(&image_url);
     }
 
-    // 4. 
     if let Err(e) = writeln!(result, "{}{}", image_xml , r#"  </url>
 </urlset> "#) {
         eprintln!("Couldn't write to file: {}", e);
@@ -188,30 +179,34 @@ fn main() -> std::io::Result<()> {
 }
 ```
 
-The examples are not so different from the ones from [How to build a dynamic sitemap with Rust Diesel][How to build a dynamic sitemap with Rust Diesel]. I hope you followedthe post already.
+The example is not so different from the ones from [How to use datas to build sitemap with Rust Diesel].
 
-We just needed to tweak them to be used for image sitemap. What we should do were
+We just need to tweak them to be used for image sitemap. What we do are
 
-1. **Data setup for images** instead of posts 
-2. **Manually start to write repeated parts** for image_sitemap.xml
-3. Define mutable variable **image_xml** and later **pass the data** processed inside `for in` loop for  the paylod of image sitemap.
+1. **Data setup for images** instead of posts
+2. **Manually start to write boilerplate parts** for image_sitemap.xml
+3. Define mutable variable **image_xml** and later **pass and process the payload data** inside  `for in`.
 4. Manually end writing wrapper for image_sitemap.xml
 
-and that was all the important process to write image sitemap. You can test it with `cargo c` or `cargo run --bin <name>` inside your console. 
+and that was all the important process to write image **sitemap.xml** for your site.
+
+You can test it with `cargo c` or `cargo run --bin <name>` inside your console.
 
 It will create image_sitemap.xml similar to the **main image** of this post.
 
-I hope it worked for your project also. Your project would be different from the example here. I want you to invest your time to find what is right for it.
+ Your project would be different from the example here. I want you to invest your time to find what is right for it.
 
-For we could build sitemap for images using datas from the database, what we need to do next is to include it  inside your main sitemap.xml file. You will find that we end up using the almost all API that [Rust Sitemap Crate][Rust Sitemap Crate] offers to write sitemap.xml in the next part.
+We could build sitemap for images using datas from the database. What we need to do next is to include it inside your main sitemap.xml file.
+
+You will find that we are using  almost all API that [Rust Sitemap Crate] offers to write sitemap.xml in the next part.
 
 <br />
 
 ## 2. How to include it inside your main sitemap.xml
 
-In the previous part, we built sitemap for images. For it is separtated from your main **sitemap.xml** we will use API from [Rust Sitemap Crate][Rust Sitemap Crate]. If you visited its examples page already, you should have noticed that the API to chain other sitemap was not used until this moment.
+In the previous part, we built sitemap for images. For it is separtated from your main **sitemap.xml**, we will use API from [Rust Sitemap Crate] to link it. By doing this, we don't have to submit to search engines everytime we create sitemaps.
 
-We will use it from now on and you can verfiy it inside the code snippet below. It is almost same for the sitemap.rs used for the [Steadylearner][Steadylearner].
+**The code snippet is long** and we will organize and automate it in the next post.
 
 ```rust
 // sitemap.rs
@@ -219,7 +214,7 @@ extern crate chrono;
 extern crate console;
 extern crate diesel;
 extern crate sitemap;
-extern crate your_lib;
+extern crate sl_lib;
 
 use std::fs::{write, File};
 
@@ -231,19 +226,10 @@ use sitemap::reader::{SiteMapEntity, SiteMapReader};
 use sitemap::structs::{ChangeFreq, SiteMapEntry, UrlEntry};
 use sitemap::writer::SiteMapWriter;
 
-use your_lib::models::*;
-use your_lib::*;
+use sl_lib::models::*;
+use sl_lib::*;
 
-use your_lib::custom::str_from_stdin;
-
-// inside custom.rs
-// pub fn str_from_stdin() -> String {
-//    let mut var = String::new();
-//    stdin().read_line(&mut var).unwrap();
-//    let var = var[..(var.len() - 1)].to_string(); // remove \n from the input
-//
-//    var
-// }
+use sl_lib::custom::str_from_stdin;
 
 fn main() -> std::io::Result<()> {
     // To decorate console output
@@ -284,7 +270,7 @@ fn main() -> std::io::Result<()> {
             .changefreq(ChangeFreq::Monthly)
             .lastmod(date) // priority is removed for some search engines ignore it and personal choice.
             .build()
-            .expect("valid");
+            .expect("invalid");
         urlwriter.url(home_entry).expect("Unable to write url");
 
         let static_routes: Vec<&str> = vec!["about", "video", "blog", "code", "image", "slideshow"];
@@ -296,7 +282,7 @@ fn main() -> std::io::Result<()> {
                 .changefreq(ChangeFreq::Monthly)
                 .lastmod(date)
                 .build()
-                .expect("valid");
+                .expect("invalid");
 
             urlwriter.url(url_entry).expect("Unable to write url");
         }
@@ -312,19 +298,19 @@ fn main() -> std::io::Result<()> {
                 .changefreq(ChangeFreq::Yearly)
                 .lastmod(date)
                 .build()
-                .expect("valid");
+                .expect("invalid");
 
             urlwriter.url(url_entry).expect("Unable to write url");
         }
 
-        // 1.
+        // assigining value to sitemap_writer is important to make the next process work
         let sitemap_writer = urlwriter.end().expect("close the urlset block");
 
         // To link other sitemap to sitemap.xml(works as a index for other .xml type sitemap)
         println!("You wanna chain other .xml type sitemap here?");
         println!("Type yes for that or no to proceed to the nexts process");
 
-        // 2.
+        // Consider only first letter of user input to console
         let choice = str_from_stdin()
             .chars()
             .next() // equals to .nth(0)
@@ -332,20 +318,17 @@ fn main() -> std::io::Result<()> {
 
         match choice {
             'y' => {
-                // 3.
                 let mut sitemap_index_writer = sitemap_writer
                     .start_sitemapindex()
                     .expect("start sitemap index tag");
                 println!("Type path for the other sitemap");
 
-                // 4.
-                // Type react_sitemap.xml image_sitemap.xml(with empty spaces)
+                // Type react_sitemap.xml, image_sitemap.xml etc or use variable instead
                 let paths_for_other_sitemaps = str_from_stdin();
 
                 let sitemap_paths_to_string = String::from(paths_for_other_sitemaps);
                 let split_paths_for_other_sitemaps: Vec<&str> = sitemap_paths_to_string.split(" ").collect();
-                 
-                // 5.
+
                 for path_for_other_sitemap in split_paths_for_other_sitemaps {
                     let entire_path_for_other_sitemap =
                         format!("https://www.steadylearner.com/{}", path_for_other_sitemap);
@@ -354,14 +337,13 @@ fn main() -> std::io::Result<()> {
                         .loc(entire_path_for_other_sitemap)
                         .lastmod(date)
                         .build()
-                        .expect("valid");
+                        .expect("invalid");
 
                     sitemap_index_writer
                         .sitemap(sitemap_entry)
                         .expect("Can't write the file");
                 }
 
-                // 6.
                 sitemap_index_writer.end().expect("close sitemap block");
             }
             _ => println!("You may not need it. Let's move on to the next phase"),
@@ -425,25 +407,29 @@ fn main() -> std::io::Result<()> {
     Ok(())
 }
 ```
-The code snippet is long. But  I thought that it is the time to inlcude the enitre code snippet for it is the last post for sitemap with Rust. You can refer to the entire code snippet or take just necessary for your project. What we should include for the sitemap.rs or main.rs were
 
-1. **Giving ownership of the process** to write sitemap to variable **sitemap_writer**
-(It is important to include this code to the rest of the code to work)
+The main points for the code snippet above are
+
+1. **Giving ownership of the process** to write sitemap to variable **sitemap_writer**(It is important to include this code to the rest of the code to work)
 2. **Consider only first letter** of user input
-3. Note that **sitemap_write** variable is used again for this process. For normal process to write sitemap from **static path** and **the datas from the data** were ended before. We start to write **sitemap index** to chain other sitemaps before the end of writing entire sitemap.xml file.
-4. The code here is to easily chain other .xml sitemap format
-5. Use `for in` loop again to **use .xml files typed by user** at the process 4.
-6. **End the entire process to write sitemap.xml** and pass the process to question users to whether they want to write sitemap.txt  file also or not
+3. Note that **sitemap_write** variable is used again for this process. Because normal process to write sitemap from **static path** and **the datas from the data** were ended before, We start to write **sitemap index** to chain other sitemaps before the end of the entire process to write **sitemap.xml**.
+4. The code used here is to easily chain other **.xml** sitemap format.
+5. Use `for in` again to **use .xml files typed by user** at the process 4.
+6. **End the entire process to write sitemap.xml** and pass the main control to question users **whether they want to write sitemap.txt** file also or not.
 
-and that was all to explain the process to include image_sitemap.xml built before. You can use it to chain other .xml format sitemap also. It would be easy following the code snippet above.
- 
+and that was all to explain how to include image_sitemap.xml in main **sitemap.xml**. 
+
+You can use it to chain other .xml files for sitemap also.
+
 <br />
 
 ## 3. Conclusion
 
-That was a long code snippet and post. But I hope it worth reading and including it inside your project. With the help from the [Rust Sitemap Crate][Rust Sitemap Crate], we could save our time to write our **sitemap.xml** easily. 
+I hope you could include your sitemap for images with Rust.
 
-If you read the other posts also, the main part of API of  the crate is 
+With the help from the [Rust Sitemap Crate], we could save our time to write our **sitemap.xml** with Rust.
+
+The main API of the crate is
 
 ```rust
 let url_entry = UrlEntry::builder()
@@ -451,18 +437,17 @@ let url_entry = UrlEntry::builder()
                 .changefreq(ChangeFreq::Yearly)
                 .lastmod(date)
                 .build()
-                .expect("valid");
-``` 
-and what we should code were just to modify and organize the projects for our purpose.
+                .expect("invalid");
+```
 
-I hope you could have the entire code snippet work. If not, please refer to [Steadylearner Github Repository][Steadylearner Github Repository] and modify the examples for your project and read the documentations inside each post.
+and what we do is just to modify and organize our project with Rust code skill.
 
-If you haven't read the other posts for sitemap with Rust before, please read them also.
+If you haven't read the other posts for sitemap with Rust yet, please read them also.
 
-1. [How to build a static sitemap with Rust][How to build a static sitemap with Rust]
-2. [How to build a dynamic sitemap with Rust Diesel][How to build a dynamic sitemap with Rust Diesel]
-3. [How to build a sitemap.txt from sitemap.xml with Rust][How to build a sitemap.txt from sitemap.xml with Rust]
+1. [Your first sitemap with Rust]
+2. [How to use datas to build sitemap with Rust Diesel]
+3. [How to build a sitemap.txt from sitemap.xml with Rust]
 
-They will help you to understand the entire code snippet inside **sitemap.rs** here.
+In the next post, you will learn **how to automate the entire process** to write **sitemap.xml** with Rust.
 
 **Thanks and please share this post with others.**

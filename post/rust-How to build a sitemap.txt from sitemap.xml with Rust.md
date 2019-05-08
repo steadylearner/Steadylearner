@@ -2,7 +2,7 @@
  Post{
    title: "How to build a sitemap.txt from sitemap.xml with Rust",
    subtitle: "Learn how to make sitemap.txt easily with Rust",
-   image: "post/sitemap/sitemap_txt_with_rust.png", // make infografic
+   image: "post/sitemap/sitemap_txt_with_rust.png",
    image_decription: "sitemap.xml to sitemap.txt by Steadylearner",
    tags: "Diesel Rust sitemap code",
    theme: "rust",
@@ -29,7 +29,7 @@
 
 This is a bonus post from the previous ones to build sitemap.xml files. I hope you already read [Your first sitemap with Rust] and [How to use datas to build sitemap with Rust Diesel].
 
-The source code used here can be separtaed or included in your previous Rust(.rs) file to build sitemap.xml.
+The source code used here can be separated or includ it in your previous Rust(.rs) file to build sitemap.xml.
 
 <br />
 
@@ -340,7 +340,7 @@ fn main() -> std::io::Result<()> {
 
 and that is all. You can test it with `Cargo c or cargo run` and verify the result. I hope you modify it well for your project.
 
-By following this post, you should have your **sitemap.txt** built from **sitemap.xml**. If there was any problem, please refer to [Sitemap GitHub] and the documenation at [Rust Sitemap Crate]
+By following this post, you should have your **sitemap.txt** built from **sitemap.xml**. If there was any problem, please refer to [Sitemap GitHub] and the documenation at [Rust Sitemap Crate].
 
 <br />
 
