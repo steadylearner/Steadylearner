@@ -24,9 +24,9 @@
 
 [Your first sitemap with Rust]: https://www.steadylearner.com/blog/read/Your-first-sitemap-with-Rust
 
-<!-- \ -->
+<!-- / -->
 
-Before I dive deep to write a sitemap for [Steadylearner][Steadylearner], Which is built with React Frontend and Rust Backend, Building a sitemap for dynamic pages seemed to be solved problem for there were many automated ways to do that.
+Before I dive deep to write a sitemap for [Steadylearner], Which is built with React Frontend and Rust Backend, Building a sitemap for dynamic pages seemed to be solved problem for there were many automated ways to do that.
 
 [The site][Steadylearner] uses React for Frontend and there were already some [sitemap builders in React development environment][Sitemap in React].
 
@@ -34,7 +34,7 @@ I tried to use them. But it wans't that helpful for the website with dynamic pag
 
 So I thought that it would be better to find the solution at server side using **Rust** because I already use [Rust Diesel] to handle database.
 
-In this post, I will show you what I learnt from the process. I hope you already followed the previous post [Your first sitemap with Rust]
+In this post, I will show you what I learnt from the process. I hope you already followed the previous post [Your first sitemap with Rust].
 
 <br />
 
