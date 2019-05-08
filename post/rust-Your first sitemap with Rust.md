@@ -2,7 +2,7 @@
  Post{
    title: "Your first sitemap with Rust",
    subtitle: "Learn how to build static sitemap with it",
-   image: "code/post/sitemap/static_sitemap_example.png",
+   image: "post/sitemap/static_sitemap_example.png",
    image_decription: "static sitemap example by Steadylearner",
    tags: "Rust sitemap code Steadylearner",
    theme: "rust",
@@ -55,7 +55,7 @@ If you just want to see the final project, you may refer to [Sitemap GitHub].
 
 <h2 class="blue">Table of Contents</h2>
 
-1. Rust Sitemap Crate offical example
+1. Rust Sitemap Crate official example
 2. Modify it to build sitemap with static routes
 3. **Conclusion**
 
@@ -63,7 +63,7 @@ If you just want to see the final project, you may refer to [Sitemap GitHub].
 
 <br />
 
-## 1. Rust Sitemap Crate offical examples
+## 1. Rust Sitemap Crate official examples
 
 Our focus is not reading the sitemap files. So we will just talk about writing sitemaps here.
 
