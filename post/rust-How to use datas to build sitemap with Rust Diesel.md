@@ -1,13 +1,14 @@
-<!--
+<!-- 
  Post{
    title: "How to use datas to build sitemap with Rust Diesel",
    subtitle: "Build sitemap with Rust and your datas",
-   image: "code/Rust-Diesel.png", //
+   image: "code/Rust-Diesel.png",
    image_decription: "Rust Disel Image from the website",
    tags: "Diesel Rust sitemap code",
    theme: "rust",
  }
 -->
+
 
 <!-- Link here -->
 
