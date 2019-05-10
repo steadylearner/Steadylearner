@@ -29,7 +29,7 @@
 
 This is a bonus post from the previous ones to build sitemap.xml files. I hope you already read [Your first sitemap with Rust] and [How to use datas to build sitemap with Rust Diesel].
 
-The source code used here can be separated or includ it in your previous Rust(.rs) file to build sitemap.xml.
+The source code used here can be separated or include it in your previous Rust(.rs) file to build sitemap.xml.
 
 <br />
 

@@ -31,7 +31,7 @@
 
 If you read the previous post for sitemap with Rust, You could build sitemap.xml and sitemap.xml for routes in your website.
 
-This post is to help otherswho have to handle many images and build sitemap.
+This post is to help others who have to handle many images and build sitemap for them.
 
 You will find that it is not so difficult with **Rust**.
 
@@ -414,7 +414,7 @@ The main points for the code snippet above are
 2. **Consider only first letter** of user input
 3. Note that **sitemap_write** variable is used again for this process. Because normal process to write sitemap from **static path** and **the datas from the data** were ended before, We start to write **sitemap index** to chain other sitemaps before the end of the entire process to write **sitemap.xml**.
 4. The code used here is to easily chain other **.xml** sitemap format.
-5. Use `for in` again to **use .xml files typed by user** at the process 4.
+5. Use `for in` again to **use .xml files typed by user** before. 
 6. **End the entire process to write sitemap.xml** and pass the main control to question users **whether they want to write sitemap.txt** file also or not.
 
 and that was all to explain how to include image_sitemap.xml in main **sitemap.xml**. 

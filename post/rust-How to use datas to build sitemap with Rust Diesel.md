@@ -9,7 +9,6 @@
  }
 -->
 
-
 <!-- Link here -->
 
 [Rust Sitemap Crate]: https://github.com/svmk/rust-sitemap
@@ -30,7 +29,7 @@ Before I dive deep to write a sitemap for [Steadylearner], Which is built with R
 
 [The site][Steadylearner] uses React for Frontend and there were already some [sitemap builders in React development environment][Sitemap in React].
 
-I tried to use them. But it wans't that helpful for the website with dynamic page using database, because they just extract path parts from react-router.
+I tried to use them. But it wasn't that helpful for the website with dynamic page using database, because they just extract path parts from react-router.
 
 So I thought that it would be better to find the solution at server side using **Rust** because I already use [Rust Diesel] to handle database.
 
@@ -65,7 +64,7 @@ If you just want to see the final project, you may refer to [Sitemap Github].
 
 ## 1. Setup Diesel and Rust files
 
-We will first setup some Diesel and Rust codes before we write code for dynamic sitemap.xml. You may skip or use your own project instead if you are not interesed in this part.
+We will first setup some Diesel and Rust codes before we write code for dynamic sitemap.xml. You may skip or use your own project instead if you are not interested in this part.
 
 Following the tutorial given by author of Diesel, You should have code snippet similar to this.
 
@@ -113,7 +112,7 @@ Inside the Post struct, You should have defined at least title parts for we will
 
 In this part, we will write some codes to read data from the database and write sitemap.xml from it.
 
-If you read the [previous post][Your first sitemap with Rust], You will find that the major difference from itt is that we just set paths with datas from the database.
+If you read the [previous post][Your first sitemap with Rust], You will find that the major difference from it is "we just set paths **with datas from the database**".
 
 ```rust
 extern crate chrono;
@@ -232,13 +231,13 @@ fn main() -> std::io::Result<()> {
 
 If you read the code snippet above, we included two Rust codes that work together.
 
-1. We connected main function to database we defined above and write some codes to make our developement process easier. You should understand that the data loaded from the process is saved at `post_results` variable and we can use it later.
+1. We connected main function to database we defined above and write some codes to make our development process easier. You should understand that the data loaded from the process is saved at `post_results` variable and we can use it later.
 
 2. We use `for in` loops in Rust again here and we are using datas to iterate from the database instead of hard coded static paths we defined inside vector.
 
 What is importnat here is that we define customized url(post_url here) to pass for the loc API from [Rust Sitemap Crate]. Other codes or parameters will be less important in the code snippet.
 
-(**post.title.replace(" ", "-")** is used here to make url for readable in React Frontend and Rust Backend also. You should find what is right for your project.)
+(**post.title.replace(" ", "-")** is used here to make url be readable in React Frontend and Rust Backend also. You should find what is right for your project.)
 
 When you make this project compile, you will find that the
 
@@ -247,7 +246,7 @@ When you make this project compile, you will find that the
 <loc>https://www.steadylearner.com/blog/read/How-to-build-a-dynamic-sitemap-with-Rust-Diesel</loc>
 ```
 
-and others with various blog titles are written for your sitemap.xml file with your static routes .
+and others with various blog titles are written for your sitemap.xml file with your static routes.
 
 <br />
 
