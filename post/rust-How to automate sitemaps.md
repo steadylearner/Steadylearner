@@ -1,6 +1,6 @@
 <!--
  Post{
-   title: "How to automate sitemap with Rust",
+   title: "How to automate sitemaps",
    subtitle: "Build sitemap automatically with Rust",
    image: "post/sitemap/automate_sitemap_rust.png",
    image_decription: "Made with CSS by Steadylearner",
