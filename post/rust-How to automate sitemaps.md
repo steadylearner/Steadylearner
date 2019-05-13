@@ -97,6 +97,7 @@ path = "src/lib.rs"
 <br />
 
 Then we will build **auto_sitemap.rs** and include code from image_sitemap.rs first.
+
 It will be similar to
 
 ```rust
@@ -344,7 +345,8 @@ fn main() {
             Interval::new(Duration::from_secs(1)) // 2. { day: 86400, week: 604800, month: 2592000, }
                 .for_each(|()| {
                     image_sitemap_renewal()?; // 3.
-                    let static_paths = vec!["about", "video", "blog", "code", "image", "slideshow"]; // 4.
+                    // 4.
+                    let static_paths = vec!["about", "video", "blog", "code", "image", "slideshow"]; 
                     let other_sitemaps = vec!["image_sitemap.xml"]; // 5.
                     sitemap_renewal(static_paths, other_sitemaps)
                 })
