@@ -1,7 +1,7 @@
 <!--
  Post{
-   title: "How to build a sitemap for React App",
-   subtitle: "Your sitemap with your React Routes",
+   title: "How to build a sitemap for React",
+   subtitle: "Learn how to make sitemap.xml with React Routes",
    image: "post/sitemap/sitemap_react.png,
    image_decription: "Made with CSS by Steadylearner",
    tags: "React sitemap app code",
@@ -14,7 +14,7 @@
 [Steadylearner]: https://www.steadylearner.com
 [Sitemap GitHub]: https://github.com/steadylearner/Sitemap
 [What is image sitemap]: https://support.google.com/webmasters/answer/178636
-[React Rouer Sitemap]: https://www.npmjs.com/package/react-router-sitemap
+[React Router Sitemap]: https://www.npmjs.com/package/react-router-sitemap
 
 <!-- Post for this series -->
 
@@ -27,7 +27,7 @@
 
 <!-- / -->
 
-After I built layout for FronetEnd playground [Steadylearner], I thought that **"It was time to focus on improving SEO"**. But the website is built with React Frontend and Rust Backend, So it was not easy to find the information for that.
+After I built layout for FronetEnd playground [Steadylearner], I thought that **"It is time to focus on improving SEO"**. But the website is built with React Frontend and Rust Backend, So it was not easy to find the information for that.
 
 Furthermore, it was not easy to use Server Side rendering and other Node.js backend friendly methods for Rust backend. So I searched what can I do yet and found that sitemap and metadata can still be implemented only using JavaScript developing environment without considering type of backend.
 
@@ -45,7 +45,7 @@ I found that it was not complete to meet every requirements to make sitemap for 
 4. [How to build sitemap for images with Rust]
 5. [How to automate sitemaps]
 
-You may find that following the documentation from the author is not so easy. Because you have to know how to deal with ES6+ JavaScript Codes. So I will give you every files you need to make it work for your post.
+You may find that following the documentation from the author is not so easy. Because you have to know how to deal with ES6+ JavaScript Codes. So I will give you every files you need to make it work for your app.
 
 I hope you already have [Node.js](https://nodejs.org/en/) installed and know JavaScript also before you start to follow this post.
 
@@ -177,7 +177,7 @@ You can verify how it works with the **$node react-sitemap-test.js** and you wil
 cache:'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">\n<url> <loc>http://www.steadylearner.com/home</loc> </url>\n</urlset>',
 ```
 
-You should have searched information about [What is sitemap?](https://support.google.com/webmasters/answer/156184?hl=en) [How to build sitemap](https://www.google.com/search?client=firefox-b-d&q=how+to+build+sitemap)sitemap for React Application etc before.
+You should have searched information about [What is sitemap?](https://support.google.com/webmasters/answer/156184?hl=en), [How to build sitemap](https://www.google.com/search?client=firefox-b-d&q=how+to+build+sitemap) for React Application etc before.
 
 Then, you should know that 
 
@@ -219,7 +219,7 @@ The important point here are
 1. You should use **@prefix for babel/register**, the package official example used is not correct and you should use this instead.
 2. Here we don't have router variable to use with Sitemap(argument) yet, we will build it in the next process.
 
-I corrected a code snippet to help you and save your time. The process is almost done. We just need to make router variable that will be passsed to contruct Sitemap with syntax **new Sitemap(Router)**.
+I corrected a code snippet to help you and save your time. The process is almost done. We just need to make router variable that will be passsed to construct Sitemap with syntax **new Sitemap(Router)**.
 
 The code below is from the react router routes for [Steadylearner] to help you refer to the real examples.
 
