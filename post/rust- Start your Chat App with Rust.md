@@ -1,7 +1,7 @@
 <!--
  Post{
-   title: "How to build Chat App with Rust",
-   subtitle: "Start your chap application with Rust",
+   title: "How to start Rust Chat App",
+   subtitle: "Build your local chat application with it.",
    image: "post/chat/rust_chat_title.png",
    image_decription: "Rust Chat App by Steadylearner",
    tags: "Rust chat app code",
@@ -78,7 +78,7 @@ I also prepared the examples to compare [ws-rs] to [socket-io] at [socket-io-and
 
 Whenever you have doubt about **Rust**, please visit [Rust Documentation] page and seach on your own. It will be better for you to read [Concurrency in Rust] and search other articles if you want to understand why Rust is fast.
 
-(If you were completely new at Rust, but familar with JavaScript, you may read [TypeScript](https://www.typescriptlang.org/docs/index.html) documentation first because the purpose of both langauges is to have strong type system . It will help you to learn **Rust** if you haven't any experience in Rust.)
+(If you were completely new at Rust, but familar with JavaScript, you may read [TypeScript](https://www.typescriptlang.org/docs/index.html) documentation first because the purpose of both langauges is to have strong type system. It will help you to learn **Rust** if you haven't any experience in Rust.)
 
 <br />
 
@@ -100,7 +100,9 @@ Whenever you have doubt about **Rust**, please visit [Rust Documentation] page a
 
 If you have tested code at [ws-rs-html-example] before you read on, you should have found that a single Rust(.rs) file does everything to render html, serve file, and exchange messages.
 
-It may be a decent single file example but it will be difficult to build more complicated app later. Therefore, we will pass its role to serve files to [Rocket] web framework. I prefer [Rocket] for it has many examples but you may use whatever framework.
+It may be a decent single file example but it will be difficult to build more complicated app later. Therefore, we will pass its role to serve files to [Rocket] web framework.
+
+(I prefer [it][Rocket] for it has many examples but you may use whatever framework.)
 
 We can start this from our **Cargo.toml** file like the code snippet below or use **$cargo add ws-rs rocket**.(You can visit [cargo-edit] page for this command)
 
@@ -170,7 +172,7 @@ fn main() {
 }
 ```
 
-The major part of the [Rocket] relevant code will be the boilerplate if you want to write minimum web with it. So you don't have to understand all at once.
+The major part of the [Rocket] relevant code will be the boilerplate if you want to write minimum webpage with it. So you don't have to understand all at once.
 
 But the important points here are
 
@@ -201,9 +203,10 @@ fn rocket() -> rocket::Rocket {
 ```
 
 They are to serve routes and init your app with them.
+
 The important part here will be **static_files** and **ws_rs**.
 
-When you see the source code for static_routes first.
+When you see the source code for static_routes first,
 
 ```rust
 use std::path::{Path, PathBuf};
@@ -228,7 +231,9 @@ pub fn chat() -> io::Result<NamedFile> {
 }
 ```
 
-and it is to serve **HTML** files for chat app when user visit https://www.yourwebsite.com/chat. 
+and it is to serve **HTML** files for chat app.
+
+For example, https://www.yourwebsite.com/chat
 
 The file will help users to connect socket and have their separtate data with JavaScript and brwoser API later. We will learn how to do that in the last part of this post.
 
@@ -378,7 +383,7 @@ It is also important for you to understand that the most of the code used above 
 
 <br />
 
-## 3. HTML and CSS
+## 3. HTML and CSS for layout
 
 ![Rust Chat App](https://www.steadylearner.com/static/images/post/chat/rust_chat.png)
 
@@ -453,15 +458,15 @@ The main points here are
 
 1. They are CSS files for layout. You can edit or use your own if you want.
 
-2. We will use various ids inside html file to select and manipulate them with JavaScript later.(We will use id to make development easy without frontend framework)
+2. We will use various ids inside html file to select and manipulate them with JavaScript later.(We will use id to make our simple Rust chat app development easy without Frontend framework)
 
 3. The chat message will be written here inside `<li>` wrappers and it is important to know that they are under `<ul id="messages" >` to be deleted easily later with JavaScript `removeMessages` function later.
 
 4. We will use [browserify] to bundle our JavaScript file with NPM modules later. It will help us to use emoji .
 
-They are to be used with JavaScript and layout and when you run your app later it will be similar to the main image of this post.
+They are to be used with JavaScript and layout and when you run your app later it will be similar to the image you saw.
 
-(**steadylearner.css** above is especially used for React and [prop-passer] package that I wrote, it is just the bunch of class name that does one thing at a time. I want you not to be confused with many css classes when you see the source code. You can verify it at [Steadylearner])
+(**steadylearner.css** above is especially used for React and [prop-passer] package that I wrote, it is just the bunch of class names that does one thing at a time. I want you not to be confused with many CSS classes when you see the source code. You can verify how they work better at [Steadylearner])
 
 <br />
 
@@ -475,9 +480,9 @@ So before you read on I want you know the two points.
 
 1. I haven't written code for chat app before this post. So please use this just for reference.
 
-2. I decided not to use Frontend Frameworks here because I want to find that I can write something useful without them.
+2. I decided not to use Frontend Frameworks here because I wanted to find that I can write something useful without them.
 
-Therefore, the code below may not be well-organized and want you to use framework if you want to make it advanced.
+Therefore, the code below may not be well-organized and want you to use framework if you want to make it advanced with database, login, send and receive video and image etc.
 
 The **index.js** file we will use will be similar to the code below.
 
@@ -626,7 +631,7 @@ socket.onmessage = function (event) {
 
     open = true;
 
-    p.textContent = `Your id is ${userId} and "You" will used in this page instead`;
+    p.textContent = `Your id is ${userId} and "You" will be used in this page instead`;
     p.className = "blue";
     li.append(p)
     messages.append(li);
@@ -680,19 +685,19 @@ socket.onclose = function (event) {
 
 The code snippet is a little bit long and I will explain only important parts here.
 
-1. We import modules you need later to use Emoji in your chat app and connect your client to the web socket server with `new WebSocket("ws://127.0.0.1:7777/ws");`.(You can test it with I :heart: Rust in your browser later)
+1. We import modules you need later to use emojis in your chat app and connect your client to the web socket server with `new WebSocket("ws://127.0.0.1:7777/ws");`.(You can test it with I :heart: Rust in your browser later)
 
 2. We define custom functions to help log time when the user send messages and remove messages. Then we make the default state for client that we will manipulate with JavaScript later.
 
-3. We assign roles for html code with id **clear** and **exit** we wrote in **index.html** before. It won't be difficult to understand what they do and you can find the codes that does similar things in **4.** .
+3. We assign roles for HTML code with id **clear** and **exit** we wrote in **index.html** before. It won't be difficult to understand what they do and you can find the codes that does similar things in **4.** .
 
-4. We find html element with id **form** with `document.getElementById`. Then we define what should happen when user type to it. We save the user input with time(**userInputs.push(userInputWithTime);**) and send it to the server with `socket.send`.(You can see that you can write some features before user input is sent to the socket server such as "clear" and "exit" here.)
+4. We find HTML element with id **form** with `document.getElementById`. Then we define what should happen when users type to it. We save the user input with time(**userInputs.push(userInputWithTime);**) and send it to the server with `socket.send`.(You can see that you can write some features before user input is sent to the socket server such as "clear" and "exit" here.)
 
-5. **This is the most important**. We defined some variables in **2.** and we can use it to assign **id** to user with `let separate = event.data.split(" ");userId = separate[0];` and verify the user is already connected to server or not with JavaScript(socket is open or not). You can see that we turn **open = false;** to **open = true** inside it and the client side code will execute code inside **if(!open)** only once.
+5. **This is the most important**. We defined some variables in **2.** and we can use it to assign **id** to user with **let separate = event.data.split(" ");** and **userId = separate[0];**. Then, verify the user is already connected to server or not with JavaScript(socket is open or not). You can see that we turn **open = false;** to **open = true;** inside it and the client side code will execute code inside **if(!open)** only once.
 
 6. We didn't write code what to do when there are more users than allowed before at Rust server side. So we make client to leave the connection with JavaScript here.
 
-7. Use this part to allow users to type emoji easily. Please, read the doucmenation for them.([node-emoji], [has-emoji])
+7. Use this part to allow users to type emojis easily. Please, read the doucmenation for them.([node-emoji], [has-emoji])
 
 8. When socket closes, we notify users that the socket connection is closed and save messages from the user, other users and server to the localStorage.(You can use your database API instead.)
 
@@ -706,12 +711,14 @@ Then you can run your chat app with `$cargo run` and verify the result and test 
 
 I hope the post was helpful to start your own chat app with Rust. It may not be sufficient to call it complete chat application. But it would be a starting point to write chat app with Rust.
 
-It was also my first trial to write chat app. So please contribute to [Steadylearner Chat] repository or [Steadylearner Post] for this blog post if you find something to improve.
+It was also my first trial to write chat app. So please contribute to Steadylearner Chat repository or Steadylearner Post for this blog post if you find something to improve.
 
 If you want to know someone who wants to improve his coding skill in Rust, JavaScript and Python everyeday, please contact me with [LinkedIn] and [Twitter]
 
-(I would be grateful also if someone give me a chance to imporve Rust code skill for it is difficult to find one here.)
+(I would be grateful also if someone give me a chance to know who can help me to imporve Rust code skill for it is difficult to find one here.)
 
-I am planning to convert Frontend code(html and JavaScript) used here to Rust with its webframework later and may write post for that also.
+I am planning to convert Frontend code(HTML and JavaScript) used here to Rust with one of its web frameworks later and may write post for that also.
+
+We might learn how to write Rust code for Frontend and Backend code later with this example.
 
 **Thanks and please share this post with others**
